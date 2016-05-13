@@ -2,3 +2,4 @@ baseurl = "https://frne.githob.com/"
 languageCode = "en-us"
 title = "Frank Neff"
 canonifyurls = true
+publishdir = "../frne.github.io"
