@@ -3,7 +3,7 @@ date = "2015-04-21T13:09:32+02:00"
 draft = false
 title = "If pragmatism raises technical debt, call it oversimplification (rant)"
 tags = [ "agile", "pragmatism" ]
-categories = [ "business" ]
+categories = [ "Business" ]
 +++
 
 The word "pragmatism" or "pragmatic" is, in my personal opinion, the most 

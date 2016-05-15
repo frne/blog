@@ -3,7 +3,7 @@ date = "2016-05-02T23:11:01+02:00"
 draft = false
 title = "Play Framework Actor Pooling with Guice (Java)"
 tags = [ "play", "guice", "akka", "java" ]
-categories = [ "java" ]
+categories = [ "Java" ]
 +++
 
 Working with the Play! Framework means working with Akka, intentionally or not. But working with Akka Actors can be 

@@ -3,7 +3,7 @@ date = "2015-07-23T18:05:12+02:00"
 draft = false
 title = "Understanding Stemmers (Natural Language Processing)"
 tags = [ "java", "nlp", "solr" ]
-categories = [ "java" ]
+categories = [ "Java" ]
 +++
 
 I am interested in NLP and have already some experience with Apache Solr. It's time to dig a little in-deep regarding 

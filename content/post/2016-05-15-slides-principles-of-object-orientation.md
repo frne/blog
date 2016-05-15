@@ -3,7 +3,7 @@ date = "2016-05-15T10:27:49+02:00"
 draft = false
 title = "Slides: Principles of Object Orientation"
 tags = [ "solid", "grasp", "patterns", "object orientation" ]
-categories = [ "talks" ]
+categories = [ "Talks", "Software Engineering"]
 +++
 
 Some time ago, in school, there was a somehow funny situation: The prof was talking about object orientation and 

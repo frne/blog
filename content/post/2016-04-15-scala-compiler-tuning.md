@@ -3,7 +3,7 @@ date = "2016-04-15T22:15:28+02:00"
 draft = false
 title = "Scala Compiler Tuning"
 tags = [ "scala", "compiler", "sbt" ]
-categories = [ "scala" ]
+categories = [ "Scala" ]
 +++
 
 As my Scala projects go on, I want to share some compiler configuration and tricks with you, which I use on many 
