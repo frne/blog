@@ -19,7 +19,7 @@ There is a native optional type since Java 8, called `Optional<T>`. It's handy a
 
 ## Functional Java Option
 
-The [Functional Java library](http://www.functionaljava.org/) has also an `Option<T>` type. It is not something completely different, but in my personal opinion, it's way more flexible and has some nice extra features. The basic operations are heavily inspired by Scala:
+The [Functional Java library](http://www.functionaljava.org/) has also an `Option<T>` type. It is not something completely different and has the same basic functionality as the Java Optional type. It's just kind of personal preference which one you use, but I'll recommend to use only one of them per project. The basic operations are heavily inspired by Scala:
 
 ```java
 Option<String> opt1 = Option.some(new String("foo"));
@@ -31,5 +31,24 @@ opt1.isSome() // true
 opt2.isSome() // false
 opt3.isSome() // true
 opt4.isSome() // false
+```
+
+### Mapping
+
+On options, there is also a method `isNone()`, but in general, you'll need those two methods rarely, because in most of all cases, you'll map options. In the following example, `fj.data.Option.*` is statically imported, so we don't need the object-prefix:
+
+```java
+final Option<Integer> opt1 = some(10);
+final Option<Integer> opt2 = none();
+
+opt1.map(n -> n*2) // some(20)
+opt2.map(n -> n*2) // none()
+opt2.map(n -> n*2).orSome(0) // some(0)
+```
+
+The `map(f)` function only applies, if the Option is of type `some()`. Otherwise, nothing happens. The last statement shows how to apply a default value using `orSome(T)`. Of course it is also possible to provide a Lambda to `orSome(final F0<A> a)`:
+
+```java
+opt2.map(n -> n*2).orSome(() -> 2) // some(2)
 ```
 
