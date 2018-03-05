@@ -57,7 +57,7 @@ public interface ResultFunction<T, R> extends Function<T, ResultFunction.Result<
 
     @Override
     default Result<R> apply(T t) {
-        try {
+        try{
             return Result.success(applyChecked(t));
         } catch (Exception e) {
             return Result.error(e);
@@ -86,13 +86,17 @@ public interface ResultFunction<T, R> extends Function<T, ResultFunction.Result<
         public boolean isSuccess() {
             return error == null;
         }
-        
+
         public <A> Result<A> map(Function<T, A> f) {
             return isSuccess() ? Result.success(f.apply(result)) : Result.error(error);
         }
 
         public <A> A fold(Function<Exception ,A> errorFn, Function<T, A> successFn) {
             return isSuccess() ? successFn.apply(result) : errorFn.apply(error);
+        }
+
+        public T getOrElse(Function<Exception, T> f) {
+            return isSuccess() ? result : f.apply(error);
         }
     }
 
@@ -114,6 +118,10 @@ public class Main {
     public static void main(String... args) {
         System.out.println(res("42")); // Success: 43
         System.out.println(res("foo")); // Error: input was not a number!
+
+        System.out.println(strPlusOne.apply("bar").
+            map(Object::toString).
+            getOrElse(e -> "NaN"));
     }
 
     private static String res(String in) {
@@ -125,8 +133,11 @@ public class Main {
 }
 ```
 
-As you can see in the `res` helper method, fold can be used to return either a success or an error string depending on 
-the `Result` state. Now, a lambda throwing exceptions (`NumberFormatException` in that case), can be used without any 
+As you can see in the `res` helper method, `fold` can be used to return either a success or an error string depending on 
+the `Result` state. Or, linke in the second example, `map` and `getOrElse` can be used to achieve the same. This 
+entirely depends on how you are used to code...
+
+Now, a lambda throwing exceptions (`NumberFormatException` in that case), can be used without any 
 side effect. Of course similar implementations do also work for other functional interfaces like `BiFUnction`, 
 `Supplier`, etc.
 
