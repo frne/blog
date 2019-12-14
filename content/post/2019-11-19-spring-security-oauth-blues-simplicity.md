@@ -1,7 +1,7 @@
 ---
 title: "The Spring Security Oauth2 Blues - Simplicity"
 date: 2019-12-14T13:58:28+01:00
-draft: true
+draft: false
 subtitle: ""
 tags: ["spring", "security" ]
 categories: ["Frameworks", "Kotlin"]
