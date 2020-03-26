@@ -13,7 +13,7 @@ pygmentsUseClasses = true
 
 [Author]
     name = "Frank Neff"
-    bio = "Frank Neff is a full time coder in love with the JVM. Doing eHealth systems in Java, he likes secure software that performs. Open minded, with a passion in object oriented & functional programming, he is always interested in new ideas and technology."
+    bio = "Frank Neff is a full time coder in love with the JVM. Doing distributed systems in Scala, he likes secure software that performs. Open minded, with a passion in functional & oo programming, he is always interested in new ideas and technology."
     github = "frne"
     twitter = "frank_neff"
     linkedin = "frankneff"
